@@ -17,6 +17,11 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
+    {
+      path: '/text-generator',
+      name: 'text-generator',
+      component: () => import('../views/TextGeneratorView.vue'),
+    }
   ],
 })
 

@@ -1,0 +1,1 @@
+<template>Text Generator</template>
