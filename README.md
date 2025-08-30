@@ -1,45 +1,148 @@
-# .
+# 🌐 Chrome New Tab - Vue.js Extension
 
-This template should help get you started developing with Vue 3 in Vite.
+A customizable **Chrome New Tab** page built with **Vue.js**. This extension transforms your new tab into a powerful dashboard with:
 
-## Recommended IDE Setup
+- 🔖 Real-time bookmark sync with Chrome
+- ✅ A lightweight to-do list
+- 📆 Google Calendar integration
+- 🔍 Multi-provider search bar
+- 🌤️ Weather forecast
+- 🕒 Live time display
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Type Support for `.vue` Imports in TS
+## 📸 Preview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+_(Add a screenshot or demo GIF here)_
 
-## Customize configuration
+---
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🚀 Features
 
-## Project Setup
+| Feature                | Description                                         |
+| ---------------------- | --------------------------------------------------- |
+| 🔖 **Bookmarks**       | Sync with Chrome Bookmarks API (read/create/delete) |
+| ✅ **To-Do List**      | Manage daily tasks using local or Chrome storage    |
+| 📆 **Google Calendar** | Show upcoming events with OAuth-based sync          |
+| 🔍 **Search Bar**      | Switch between Google, DuckDuckGo, Bing, etc.       |
+| 🌤️ **Weather**         | Fetch forecast using OpenWeather or WeatherAPI      |
+| 🕒 **Time**            | Real-time clock with date                           |
 
-```sh
+---
+
+## 🧱 Tech Stack
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- Chrome Extension Manifest V3
+- Google Calendar API
+- OpenWeatherMap API
+- Chrome Bookmarks & Storage APIs
+
+---
+
+## 📁 Project Structure
+
+```bash
+src/
+├── components/
+│   ├── Bookmark/
+│   ├── Todo/
+│   ├── Calendar/
+│   ├── Search/
+│   ├── Weather/
+│   └── Time/
+├── composables/
+├── services/
+├── views/
+└── App.vue
+```
+
+---
+
+## 🔧 Setup & Development
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/yourusername/chrome-new-tab.git
+cd chrome-new-tab
+```
+
+### 2. Install Dependencies
+
+```bash
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+### 3. Start Dev Server
 
-```sh
+```bash
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+> This runs the app in development mode. Use something like [Extension Reloader](https://chrome.google.com/webstore/detail/extension-reloader) to reload your extension quickly while developing.
 
-```sh
+---
+
+## 🧪 Build for Production
+
+```bash
 pnpm build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+Then load the `dist/` folder as an **Unpacked Extension** in Chrome:
 
-```sh
-pnpm test:unit
+1. Open `chrome://extensions/`
+2. Enable **Developer Mode**
+3. Click **Load unpacked** and select the `dist/` folder
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file:
+
+```env
+VITE_GOOGLE_API_KEY=your_api_key
+VITE_GOOGLE_CLIENT_ID=your_client_id
+VITE_WEATHER_API_KEY=your_weather_api_key
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
-pnpm lint
+## 🗃️ Chrome Permissions Required
+
+```json
+"permissions": [
+  "bookmarks",
+  "storage",
+  "identity",
+  "tabs"
+]
 ```
+
+---
+
+## 📅 Roadmap
+
+- [x] Chrome bookmark two-way sync
+- [x] To-do card with local persistence
+- [x] Google Calendar event integration
+- [x] Weather + time components
+- [ ] Custom theme support
+- [ ] Responsive layout improvements
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 🙌 Credits
+
+Built with ❤️ using Vue and Vite by \[Md Arman]
+
+> Inspired by productivity dashboards like Momentum and custom new tab experiences.
