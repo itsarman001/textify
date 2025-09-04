@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PaintbrushVertical } from 'lucide-vue-next'
+import Spaces from '@/components/Spaces.vue'
 </script>
 
 <template>
@@ -22,13 +23,27 @@ import { PaintbrushVertical } from 'lucide-vue-next'
 
     <!-- Main Section -->
     <section class="flex flex-col lg:flex-row gap-6 mb-8">
-      <div class="flex-1 bg-white/5 rounded-lg min-h-[200px] p-4">Main Content</div>
+      <div class="flex-1 bg-white/5 rounded-lg min-h-[200px] p-4">
+        <div class="flex gap-4 items-center">
+          <template
+            v-for="value in Array(7)
+              .fill()
+              .map((_, i) => i + 1)"
+            :key="value"
+          >
+            <Spaces
+              :label="`Space ${value}`"
+              :backgroundImage="`https://picsum.photos/200?random=${value}`"
+            />
+          </template>
+        </div>
+      </div>
       <aside class="w-full lg:w-1/3 bg-white/5 rounded-lg min-h-[200px] p-4">Sidebar</aside>
     </section>
 
     <!-- Footer -->
-    <footer class="text-sm text-gray-400 text-center mt-auto py-4">
+    <!-- <footer class="text-sm text-gray-400 text-center mt-auto py-4">
       © 2025 - Your Custom New Tab
-    </footer>
+    </footer> -->
   </main>
 </template>
